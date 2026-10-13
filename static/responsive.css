@@ -1,0 +1,65 @@
+/* 移动端统一适配：保证表单、后台菜单、订单卡片和弹窗在窄屏可用 */
+html { overflow-x: hidden; }
+body { min-width: 320px; }
+img, video { max-width: 100%; }
+
+@media (max-width: 760px) {
+  .topbar { padding: 16px 18px; }
+  .topbar nav { width: 100%; gap: 10px 16px; flex-wrap: wrap; }
+  .topbar nav a { font-size: 13px; }
+  .container { padding: 32px 14px 64px; }
+  .hero { margin-bottom: 24px; }
+  .hero h1 { font-size: clamp(26px, 8vw, 32px); line-height: 1.25; }
+  .hero p { font-size: 14px; }
+  .panel { padding: 18px 16px; border-radius: 12px; }
+  .panel-heading { flex-direction: column; gap: 4px; }
+  .button { min-height: 42px; }
+
+  .ticket-card { margin: 0; }
+  .ticket-section { padding: 24px 18px; }
+  .ticket-section form > label { margin-bottom: 16px; }
+  .ticket-section form > label > input,
+  .ticket-section form > label > input[type="text"] { font-size: 16px; }
+  .upload-drop { min-height: 104px; padding: 18px 14px; }
+  .submit-button { width: 100%; }
+  .query-result { padding: 22px 18px; }
+  .result-heading h2 { font-size: 20px; }
+  .status-timeline { overflow-x: auto; padding-bottom: 6px; }
+  .timeline-item { min-width: 138px; }
+  .result-card { padding: 16px; }
+  .wechat { flex-direction: column; align-items: flex-start; padding: 18px; }
+  .wechat img { align-self: center; }
+
+  .admin-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; padding: 5px; }
+  .admin-tab { padding: 10px 5px; text-align: center; font-size: 11px; white-space: nowrap; }
+  .admin-tab span { font-size: 8px; letter-spacing: .5px; }
+  .admin-tab b { right: 4px; top: 4px; padding: 1px 4px; }
+  .filters, .order-search { align-items: stretch; flex-direction: column; }
+  .filters input, .filters select, .order-search input, .order-search select,
+  .filters .button, .order-search .button, .reset-button { width: 100% !important; min-width: 0; text-align: center; }
+  .table-wrap { margin: 0 -16px; padding: 0 16px; }
+  table { min-width: 560px; }
+  .order-card { padding: 16px 15px; }
+  .order-actions { align-items: stretch; flex-direction: column; }
+  .order-actions form, .order-actions form:first-child { width: 100%; }
+  .order-actions form:first-child { align-items: stretch; flex-direction: column; }
+  .order-actions select, .order-actions .button, .upload-results-trigger { width: 100% !important; }
+  .pagination { justify-content: space-between; gap: 6px; flex-wrap: wrap; }
+  .pagination a, .pagination b { padding: 8px 9px; }
+  .settings-grid { gap: 14px; }
+
+  .modal-backdrop, .submit-modal-backdrop { padding: 12px; align-items: center; }
+  .confirm-modal, .submit-modal { max-height: calc(100vh - 24px); overflow-y: auto; padding: 28px 18px 22px; }
+  .modal-actions { flex-direction: column-reverse; }
+  .modal-actions .button { width: 100%; }
+  .combined-file-grid { grid-template-columns: 1fr; }
+  .combined-upload-dialog { padding: 28px 18px 22px; }
+}
+
+@media (max-width: 420px) {
+  .brand { font-size: 17px; letter-spacing: 1px; }
+  .topbar nav { gap: 8px 12px; }
+  .admin-tab { font-size: 10px; }
+  .ticket-section { padding-left: 14px; padding-right: 14px; }
+  .query-result { padding-left: 14px; padding-right: 14px; }
+}

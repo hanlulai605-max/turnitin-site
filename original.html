@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>论文检测服务 · Turnitin</title>
+  <link rel="icon" href="https://turnitinjiance.fun/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://turnitinjiance.fun/static/style.css"><link rel="stylesheet" href="https://turnitinjiance.fun/static/responsive.css">
+<link rel="stylesheet" href="https://turnitinjiance.fun/static/user.css">
+<link rel="stylesheet" href="https://turnitinjiance.fun/static/user-polish.css">
+<link rel="stylesheet" href="https://turnitinjiance.fun/static/user-layout-fix.css">
+<link rel="stylesheet" href="https://turnitinjiance.fun/static/submit-modal.css">
+<link rel="stylesheet" href="https://turnitinjiance.fun/static/submit-modal-extra.css">
+<link rel="stylesheet" href="https://turnitinjiance.fun/static/user-v2.css">
+<script defer src="https://turnitinjiance.fun/static/user-query.js"></script>
+<script defer src="https://turnitinjiance.fun/static/user-submit.js"></script>
+<script defer src="https://turnitinjiance.fun/static/user-edition.js"></script>
+
+</head>
+<body class="user-page">
+<header class="topbar"><a class="brand" href="/">TURNITIN <span>文档检测</span></a><nav><a href="/">用户提交</a></nav></header>
+<main class="container">
+<div class="user-workspace">
+  <section class="service-card" aria-labelledby="service-title">
+    <header class="service-brand">
+      <span>DOCUMENT INTELLIGENCE</span>
+      <h1 id="service-title">Turnitin</h1>
+      <p>论文检测服务</p>
+    </header>
+
+    <nav class="service-tabs" aria-label="服务功能">
+      <button type="button" class="service-tab active" data-service-tab="submit" aria-selected="true">提交检测</button>
+      <button type="button" class="service-tab" data-service-tab="query" aria-selected="false">查询报告</button>
+    </nav>
+
+    
+    
+    
+
+    <div class="service-panel active" data-service-panel="submit">
+      <form class="submit-form" method="post" action="/submit" enctype="multipart/form-data">
+        <label class="field-label" for="submit-code">兑换码</label>
+        <div class="code-field">
+          <input id="submit-code" name="code" required autocomplete="off" placeholder="请输入您的兑换码" value="">
+          <span>自动识别版本</span>
+        </div>
+        <div id="card-usage" class="card-usage" hidden aria-live="polite">
+          <div><span>检测版本</span><strong data-usage="edition">--</strong></div>
+          <div><span>总次数</span><strong data-usage="total">--</strong></div>
+          <div><span>已使用</span><strong data-usage="used">--</strong></div>
+          <div><span>剩余次数</span><strong data-usage="remaining">--</strong></div>
+        </div>
+        <p id="card-usage-feedback" class="card-usage-feedback" aria-live="polite"></p>
+
+        <label class="field-label">上传文件</label>
+        <label class="upload-drop" for="document-upload">
+          <input id="document-upload" type="file" name="document" required accept=".pdf,.doc,.docx,.txt,.rtf,.pptx">
+          <strong>点击选择，或将文件拖拽到这里</strong>
+          <small>支持 PDF、DOC、DOCX、TXT、RTF、PPTX 格式，最大 50MB</small>
+        </label>
+
+        <button class="button submit-button" type="submit">提交检测</button>
+      </form>
+
+      
+      <aside class="service-notes" aria-label="服务说明">
+        <strong>提交前请确认</strong>
+        <ul>
+          <li>提交后5-15分钟点击查询报告，可查看报告</li><li>全程自助操作安全独享不泄露不收录</li><li>结果准确提交检测后5-10分钟，检测完可以下载报告。如遇官网高峰期40分钟出结果AI可检测正文满350词以上，最大全文30000词的[【英文论文、日语论文、西班牙文论文]</li><li>检测完成后请及时下载报告系统不定时删除您也可以下载报告后手动删除</li>
+        </ul>
+      </aside>
+      
+    </div>
+
+    <div class="service-panel" data-service-panel="query" hidden>
+      <section class="query-section">
+        <div class="section-heading">
+          <div><span class="section-index">02</span><h2>查询报告</h2></div>
+          <p>使用提交文档时的兑换码查询</p>
+        </div>
+        <form id="query-form" method="post" action="/query">
+          <label class="field-label" for="query-code">兑换码</label>
+          <input id="query-code" name="code" required autocomplete="off" placeholder="输入提交时使用的兑换码" value="">
+          <button id="query-button" class="button" type="submit">查询检测结果</button>
+        </form>
+        <div id="query-feedback" class="query-feedback" aria-live="polite"></div>
+      </section>
+    </div>
+  </section>
+
+  <div id="query-result-area" aria-live="polite">
+    
+  </div>
+
+  <section class="wechat">
+    <div><p class="eyebrow">CONTACT</p><h2>需要帮助？联系服务人员</h2><p>微信号：<strong>essay1178</strong></p></div>
+    <img src="/files/settings/3ff587370f88483ea70fa768cff37657.jpg" alt="微信二维码">
+  </section>
+</div>
+</main>
+<footer>文档检测服务 · 结果自提交起保留 24 小时</footer>
+</body>
+</html>
