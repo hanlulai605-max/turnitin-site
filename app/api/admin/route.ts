@@ -12,7 +12,9 @@ function checkAuth(req: NextRequest) {
 // GET - 查看数据
 export async function GET(req: NextRequest) {
   if (!checkAuth(req)) return NextResponse.json({ error: "未授权" }, { status: 401 });
-  const { tab, status, limit } = req.nextUrl.searchParams;
+  const tab = req.nextUrl.searchParams.get("tab");
+  const status = req.nextUrl.searchParams.get("status") || undefined;
+  const limit = req.nextUrl.searchParams.get("limit");
   if (tab === "codes") {
     return NextResponse.json({ codes: listCodes(parseInt(limit || "100")) });
   }
