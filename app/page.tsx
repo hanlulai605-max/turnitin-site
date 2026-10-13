@@ -18,7 +18,7 @@ export default function Home() {
     const zone = document.querySelector(".upload-drop");
     if (!zone) return;
     const prevent = (e: Event) => e.preventDefault();
-    const handleDrop = (e: DragEvent) => {
+    const handleDrop = (e: any) => {
       e.preventDefault();
       const f = e.dataTransfer?.files?.[0];
       if (f) setFile(f);
